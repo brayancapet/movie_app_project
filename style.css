@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 500vh;
+    width: 100vw;
+    max-width: 100%;
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 20px;
+}
+
+::-webkit-scrollbar-track{
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #8685EF;
+}
+
+/* Container for my entire project */
+.project-container {
+    height: fit-content;
+    width: 100%;
+}
+
+/* Container for my navbar */
+.navbar-container {
+    height: 10vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #25242a;
+    box-shadow: 0 5px 5px gray;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+    z-index: 3;
+}
+
+/* Title in my navbar */
+#navbar-title {
+    font-size: 3rem;
+    color: #ddd;
+    text-shadow: 3px 3px 2px #8685EF;
+}
+
+/* Cool icon i found on font awesome, that replace my letter O in movie app */
+#navbar-title > i{
+    font-size: 4rem;
+    color: #8685EF;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    text-shadow: 1px 1px 1px #ddd;
+}
+#navbar-title > i:hover {
+    transform: rotate(360deg);
+}
+
+/* Container for my home section with trending movies and tv shows */
+.home-section-container {
+    height: fit-content;
+    width: 100%;
+}
+
+/* Container for my trending movies */
+.trending-movies-container, .trending-series-container {
+    height: 50vh;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1%;
+}
+
+/* Container for my title in the section */
+.trending-title {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+/* Paragraph in my trending section */
+.trending-paragraph {
+    font-size: 2rem;
+    color: #25242a;
+    position: sticky;
+    left: 3%;
+    z-index: 2;
+    text-shadow: 1px 1px 1px #8685EF;
+}
+
+/* Card for trending movies */
+.trending-content , .trending-series-content{
+    height: 80%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 15%);
+    gap: 2%;
+    grid-auto-flow: column;
+    grid-auto-columns: 15%;
+}
+
+.trending-content > div , .trending-series-content > div{
+    cursor: pointer;
+    border-radius: 0.375rem;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property 
+to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: #25242a;
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 0.375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+}
+
+#title {
+    font-size: 1.5rem;
+    color: #8685EF;
+    font-weight: 600;
+}
