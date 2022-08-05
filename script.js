@@ -7,6 +7,14 @@ const trending_series_content = document.querySelector('.trending-series-content
 const categories_content = document.querySelector('.categories-content');
 const popular_people_content = document.querySelector('.popular-people-content');
 
+const scroll_to_top = document.querySelector('.scroll-top-btn');
+
+scroll_to_top.addEventListener('click', function(){
+    console.log('scroll to top');
+    window.scroll(0, 0);
+});
+
+
 // My list of movie and series
 let myLibrary = [];
 
@@ -96,10 +104,11 @@ function showSeriesCard(results){
             <div class="flip-card-back">
                 <div class="card-title">
                     <p id="title">${result.name}</p>
-                    <p id="overview">
+                    
+                </div>
+                <p id="overview">
                         ${result.overview}
                     </p>
-                </div>
             </div>
         </div>
         </div>
