@@ -230,7 +230,8 @@ to demonstrate that the flip itself goes out of the box on hover (remove perspec
     width: 90%;
     background-image: linear-gradient(45deg, rgba(161, 165, 162, .219608), transparent);
     border-radius: 15px;
-    border: 1px solid #000;
+    border: none;
+    outline: none;
     box-shadow: 3px 3px 3px gray;
     display: flex;
     justify-content: center;
